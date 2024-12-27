@@ -32,14 +32,14 @@ Author URL: http://w3layouts.com
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-lg-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link " aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link " href="about.html">About</a>
                         </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link active" href="contact.html">Contact</a>
                         </li>
 
                     </ul>
@@ -243,6 +243,12 @@ Author URL: http://w3layouts.com
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/theme-change.js"></script>
     <!-- MENU-JS -->
+    <!-- //move-top-->
+    <!-- Template JavaScript -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/theme-change.js"></script>
+    
+    <!-- MENU-JS -->
     <script>
         $(window).on("scroll", function() {
             var scroll = $(window).scrollTop();
@@ -281,6 +287,27 @@ Author URL: http://w3layouts.com
         });
 
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          var path = window.location.pathname;
+          var page = path.split("/").pop();
+      
+          // Remove active class from all links
+          document.getElementById("home-link").classList.remove("active");
+          document.getElementById("about-link").classList.remove("active");
+          document.getElementById("contact-link").classList.remove("active");
+      
+          // Add active class to the current page link
+          if (page === "index.html") {
+            document.getElementById("home-link").classList.add("active");
+          } else if (page === "about.html") {
+            document.getElementById("about-link").classList.add("active");
+          } else if (page === "contact.html") {
+            document.getElementById("contact-link").classList.add("active");
+          }
+        });
+      </script>
+      
     <!-- //disable body scroll which navbar is in active -->
 
     <!-- //bootstrap -->
@@ -289,3 +316,4 @@ Author URL: http://w3layouts.com
 </body>
 
 </html>
+
